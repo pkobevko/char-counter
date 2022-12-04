@@ -8,7 +8,7 @@ public class CharCounterCache {
 
     private final HashMap<String, LinkedHashMap<Character, Integer>> cache = new HashMap<>();
 
-    public boolean contains(String input) {
+    public boolean containsString(String input) {
         return cache.containsKey(input);
     }
 

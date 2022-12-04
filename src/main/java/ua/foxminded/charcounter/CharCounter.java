@@ -10,7 +10,7 @@ public class CharCounter {
     public Map<Character, Integer> countCharacters(String input) {
         validate(input);
 
-        if (cache.contains(input)) {
+        if (cache.containsString(input)) {
             return cache.getCountResult(input);
         }
 
