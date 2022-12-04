@@ -5,13 +5,17 @@ import java.util.Map;
 
 public class CharCounter {
 
-    CharCounterCache cache = new CharCounterCache();
+    private CharCounterCache cache = new CharCounterCache();
+
+    public void setCache(CharCounterCache cache) {
+        this.cache = cache;
+    }
 
     public Map<Character, Integer> countCharacters(String input) {
         validate(input);
 
         if (cache.containsString(input)) {
-            return cache.getCountResult(input);
+            return cache.getValue(input);
         }
 
         LinkedHashMap<Character, Integer> countResult = new LinkedHashMap<>();
@@ -21,14 +25,13 @@ public class CharCounter {
             countResult.putIfAbsent(character, 0);
             countResult.put(character, countResult.get(character) + 1);
         }
-
         cache.put(input, countResult);
         return countResult;
     }
 
     private void validate(String input) {
         if (input == null) {
-            throw new IllegalArgumentException("You cannot pass null");
+            throw new IllegalArgumentException("You cannot pass null to this function");
         }
     }
 }

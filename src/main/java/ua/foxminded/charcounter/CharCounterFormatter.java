@@ -12,7 +12,7 @@ public class CharCounterFormatter {
             stringBuilder.append(String.format("\"%c\" - %d\n", k, v));
         });
 
-        if(stringBuilder.length() > 0){
+        if (stringBuilder.length() > 0) {
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         }
         return stringBuilder.toString();

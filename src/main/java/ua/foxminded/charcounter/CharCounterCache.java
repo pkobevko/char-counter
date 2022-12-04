@@ -12,7 +12,7 @@ public class CharCounterCache {
         return cache.containsKey(input);
     }
 
-    public Map<Character, Integer> getCountResult(String input) {
+    public Map<Character, Integer> getValue(String input) {
         return cache.get(input);
     }
 
