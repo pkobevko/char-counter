@@ -13,7 +13,8 @@ public class CharCounterFormatter {
         });
 
         if (stringBuilder.length() > 0) {
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            int lastIndexOfString = stringBuilder.length() - 1;
+            stringBuilder.deleteCharAt(lastIndexOfString);
         }
         return stringBuilder.toString();
     }
